@@ -1,0 +1,29 @@
+# --- Python Compiled Files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- PyInstaller & Build Output ---
+build/
+dist/
+*.spec
+
+# --- IDEs and Editors ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- OS Temporary Files ---
+.DS_Store
+Thumbs.db
