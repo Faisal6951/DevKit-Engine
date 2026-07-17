@@ -1,8 +1,6 @@
 # 🛠️ DevKit Engine (Apex)
 
-[![Build and Sign](https://github.com/Faisal6951/DevKit-Engine/actions/workflows/build.yml/badge.svg)](https://github.com/Faisal6951/DevKit-Engine/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/v/release/your-username/DevKit-Engine)](https://github.com/Faisal6951/DevKit-Engine/releases)
 
 A minimalist, high-performance Windows environment provisioning and setup deployment engine. Built for engineers who need to turn a fresh Windows installation into a fully configured development workstation in a single click.
 
