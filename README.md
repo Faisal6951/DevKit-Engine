@@ -1,8 +1,8 @@
 # 🛠️ DevKit Engine (Apex)
 
-[![Build and Sign](https://github.com/your-username/DevKit-Engine/actions/workflows/build.yml/badge.svg)](https://github.com/your-username/DevKit-Engine/actions)
+[![Build and Sign](https://github.com/Faisal6951/DevKit-Engine/actions/workflows/build.yml/badge.svg)](https://github.com/Faisal6951/DevKit-Engine/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/v/release/your-username/DevKit-Engine)](https://github.com/your-username/DevKit-Engine/releases)
+[![Release](https://img.shields.io/github/v/release/your-username/DevKit-Engine)](https://github.com/Faisal6951/DevKit-Engine/releases)
 
 A minimalist, high-performance Windows environment provisioning and setup deployment engine. Built for engineers who need to turn a fresh Windows installation into a fully configured development workstation in a single click.
 
@@ -39,7 +39,7 @@ The installation engine comes pre-configured to silently bundle and provision th
 *   **Permissions:** Administrative privileges (required for silent application installation routines)
 
 ### Installation
-1. Head over to the [GitHub Releases](https://github.com/your-username/DevKit-Engine/releases) page.
+1. Head over to the [GitHub Releases](https://github.com/Faisal6951/DevKit-Engine/releases) page.
 2. Download the latest compiled release architecture (`Apex.exe`).
 3. Run the application as an **Administrator** to allow the `winget` silent execution process to interact with your system packages.
 
