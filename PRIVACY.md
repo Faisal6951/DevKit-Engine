@@ -1,0 +1,1 @@
+DevKit Engine does not track, collect, or transmit any user data or personal details to external cloud services. Credentials entered into the setup engine are securely kept entirely local to your own device within your custom local configuration json structure.
