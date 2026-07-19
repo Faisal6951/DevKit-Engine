@@ -15,6 +15,7 @@ from logic.deploy_engine import DeploymentEngine
 
 class DevKitLauncher(ctk.CTk):
     def __init__(self):
+        self._custom_icon = None
         super().__init__()
         
         self.usb_dir = get_usb_directory()
@@ -49,6 +50,24 @@ class DevKitLauncher(ctk.CTk):
         
         self.setup_ui_layout()
         self.load_settings_to_ui()
+        # ── Icon: sharp on all DPI scales ───────────────────────────────────
+        _ico = os.path.join(self.usb_dir, "assets", "devkit-engine.ico")
+        if os.path.exists(_ico):
+            self._custom_icon = _ico
+            import tkinter as _tk
+
+            try:
+                _tk.Tk.wm_iconbitmap(self, bitmap=_ico)
+            except Exception:
+                pass
+    def iconbitmap(self, bitmap=None, **kwargs):
+        """
+        CustomTkinter calls self.iconbitmap(CTK_ICON) internally via after(200).
+        This intercepts that call and blocks it so our icon stays locked.
+        """
+        if self._custom_icon and bitmap and bitmap != self._custom_icon:
+            return  # CTK is trying to reset to its own icon — block it
+        super().iconbitmap(bitmap=bitmap, **kwargs)
 
     def setup_ui_layout(self):
         # TOP BAR
@@ -60,7 +79,7 @@ class DevKitLauncher(ctk.CTk):
         
         self.creator_link = ctk.CTkLabel(self.top_bar, text="⚡ Developed by Faisal Adnan & Team", font=ctk.CTkFont(family="Segoe UI", size=10, underline=True), text_color="#737373", cursor="hand2")
         self.creator_link.pack(side="right", padx=15)
-        self.creator_link.bind("<Button-1>", lambda e: webbrowser.open("https://github.com"))
+        self.creator_link.bind("<Button-1>", lambda e: webbrowser.open("https://github.com/Faisal6951/DevKit-Engine"))
         
         self.body = ctk.CTkFrame(self, corner_radius=0, fg_color="#0A0A0A")
         self.body.pack(fill="both", expand=True, padx=12, pady=12)
