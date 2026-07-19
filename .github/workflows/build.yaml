@@ -19,9 +19,9 @@ jobs:
           pip install pyinstaller
       - name: Build with PyInstaller
         run: |
-          pyinstaller --clean --noconsole --onefile --name "DevKitEngine" --icon="assets/devkit-engine.ico" --add-data "assets;assets" main.py
+          pyinstaller --clean --noconsole --onefile --name "DevKit-Engine" --icon="assets/devkit-engine.ico" --add-data "assets;assets" main.py
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: DevKitEngine-Exe
-          path: dist/DevKitEngine.exe
+          name: DevKit-Engine-Exe
+          path: dist/DevKit-Engine.exe
