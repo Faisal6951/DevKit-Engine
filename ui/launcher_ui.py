@@ -20,6 +20,7 @@ class DevKitLauncher(ctk.CTk):
 
         self.usb_dir = get_usb_directory()
         self.vault_data = load_vault(self.usb_dir)
+        self.engine = DeploymentEngine(self)
 
         self.title("Dev-Kit Setup Engine")
 

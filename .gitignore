@@ -27,3 +27,5 @@ dist/
 # --- OS Temporary Files ---
 .DS_Store
 Thumbs.db
+Setup_Complete.html
+devkit_vault.json
