@@ -3,19 +3,23 @@ import sys
 import ctypes
 
 
-# --- FORCE ADMIN PRIVILEGES ON START ---
 def run_as_admin():
     try:
+        # Check if running as admin
         is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
     except:
         is_admin = False
 
     if not is_admin:
+        # If not admin, re-run the script as admin
         ctypes.windll.shell32.ShellExecuteW(
             None, "runas", sys.executable, " ".join(sys.argv), None, 1
         )
         sys.exit()
 
+
+# Run this check immediately
+run_as_admin()
 
 # ── FIX: Tell Windows taskbar this is its own app, not python.exe ──────────
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
@@ -32,6 +36,7 @@ except Exception:
         ctypes.windll.user32.SetProcessDPIAware()  # fallback for older Windows
     except Exception:
         pass
+
 
 if __name__ == "__main__":
     run_as_admin()

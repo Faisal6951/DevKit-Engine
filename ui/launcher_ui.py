@@ -17,39 +17,28 @@ class DevKitLauncher(ctk.CTk):
     def __init__(self):
         self._custom_icon = None
         super().__init__()
-        
+
         self.usb_dir = get_usb_directory()
         self.vault_data = load_vault(self.usb_dir)
-        self.engine = DeploymentEngine(self)
-        
-        self.title(APP_NAME)
-        
 
-        # # 3. Dynamically build the path to your icon asset
-        # icon_full_path = os.path.join(self.usb_dir, "assets", ICON_NAME)
-        # if os.path.exists(icon_full_path):
-        #     try:
-        #         self.iconbitmap(icon_full_path)
-        #     except Exception as e:
-        #         print(f"[WARN] Could not load window icon: {e}")
-        # else:
-        #     print(f"[WARN] Icon asset not found at: {icon_full_path}")
+        self.title("Dev-Kit Setup Engine")
 
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
-        
+
         width = 1024
         height = min(540, int(screen_height * 0.75))
         x = (screen_width - width) // 2
         y = (screen_height - height) // 2
-        
+
         self.geometry(f"{width}x{height}+{x}+{y}")
         self.resizable(False, False)
-        
+
+        self.clipboard_active = False
         self.app_checkboxes = {}
-        
         self.setup_ui_layout()
         self.load_settings_to_ui()
+
         # ── Icon: sharp on all DPI scales ───────────────────────────────────
         _ico = os.path.join(self.usb_dir, "assets", "devkit-engine.ico")
         if os.path.exists(_ico):
@@ -60,6 +49,7 @@ class DevKitLauncher(ctk.CTk):
                 _tk.Tk.wm_iconbitmap(self, bitmap=_ico)
             except Exception:
                 pass
+
     def iconbitmap(self, bitmap=None, **kwargs):
         """
         CustomTkinter calls self.iconbitmap(CTK_ICON) internally via after(200).
