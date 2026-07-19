@@ -2,6 +2,9 @@
 import sys
 import ctypes
 
+import sys
+import os
+
 
 def run_as_admin():
     try:
@@ -23,7 +26,7 @@ run_as_admin()
 
 # ── FIX: Tell Windows taskbar this is its own app, not python.exe ──────────
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
-    "Faisal6951.DevKitEngine.Apex.1"
+    "Faisal6951.DevKitEngine.Apex.2"
 )
 
 # ── FIX: DPI blur on scaled displays ────────────────────────────────────────

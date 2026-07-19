@@ -1,4 +1,5 @@
 # ui/launcher_ui.py
+import sys
 import threading
 import os
 import re
@@ -40,12 +41,24 @@ class DevKitLauncher(ctk.CTk):
         self.setup_ui_layout()
         self.load_settings_to_ui()
 
-        # ── Icon: sharp on all DPI scales ───────────────────────────────────
-        _ico = os.path.join(self.usb_dir, "assets", "devkit-engine.ico")
-        if os.path.exists(_ico):
-            self._custom_icon = _ico
-            import tkinter as _tk
+       # ── Icon: sharp on all DPI scales ───────────────────────────────────
+        import tkinter as _tk
 
+        def _resolve_icon():
+            # 1. Check inside the bundled exe (PyInstaller --add-data)
+            if hasattr(sys, '_MEIPASS'):
+                p = os.path.join(sys._MEIPASS, "assets", "devkit-engine.ico")
+                if os.path.exists(p):
+                    return p
+            # 2. Check next to the exe / next to main.py (normal run or portable)
+            p = os.path.join(self.usb_dir, "assets", "devkit-engine.ico")
+            if os.path.exists(p):
+                return p
+            return None
+
+        _ico = _resolve_icon()
+        if _ico:
+            self._custom_icon = _ico
             try:
                 _tk.Tk.wm_iconbitmap(self, bitmap=_ico)
             except Exception:
