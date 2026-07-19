@@ -25,15 +25,15 @@ class DevKitLauncher(ctk.CTk):
         self.title(APP_NAME)
         
 
-        # 3. Dynamically build the path to your icon asset
-        icon_full_path = os.path.join(self.usb_dir, "assets", ICON_NAME)
-        if os.path.exists(icon_full_path):
-            try:
-                self.iconbitmap(icon_full_path)
-            except Exception as e:
-                print(f"[WARN] Could not load window icon: {e}")
-        else:
-            print(f"[WARN] Icon asset not found at: {icon_full_path}")
+        # # 3. Dynamically build the path to your icon asset
+        # icon_full_path = os.path.join(self.usb_dir, "assets", ICON_NAME)
+        # if os.path.exists(icon_full_path):
+        #     try:
+        #         self.iconbitmap(icon_full_path)
+        #     except Exception as e:
+        #         print(f"[WARN] Could not load window icon: {e}")
+        # else:
+        #     print(f"[WARN] Icon asset not found at: {icon_full_path}")
 
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
