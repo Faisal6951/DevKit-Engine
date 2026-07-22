@@ -37,7 +37,7 @@ It installs everything silently using Windows' built-in WinGet. No browser tabs.
 ## 🎬 Demo
 
 <div align="center">
-  <img src="assets/DevKit_gif.gif" alt="DevKit Engine in action" width="700" />
+  <img src="assets/Updated_Devkit_new.gif" alt="DevKit Engine in action" width="700" />
 </div>
 
 > 📺 **Full video demo coming soon** — [watch on GitHub Releases](https://github.com/Faisal6951/DevKit-Engine/releases)
