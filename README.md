@@ -1,61 +1,172 @@
-# 🛠️ DevKit Engine (Apex)
+<div align="center">
+
+<img src="assets/devkit-engine.ico" alt="DevKit Engine Logo" width="100" />
+
+# DevKit Engine — Apex
+
+### One-click Windows dev environment setup. No manual installs. No wasted time.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?logo=windows)](https://github.com/Faisal6951/DevKit-Engine/releases)
+[![Built With](https://img.shields.io/badge/Built%20With-Python%203.12-3776AB?logo=python)](https://python.org)
+[![WinGet](https://img.shields.io/badge/Powered%20By-WinGet-00B4D8)](https://learn.microsoft.com/en-us/windows/package-manager/)
+[![Release](https://img.shields.io/github/v/release/Faisal6951/DevKit-Engine?color=brightgreen&label=Latest%20Release)](https://github.com/Faisal6951/DevKit-Engine/releases)
 
-A minimalist, high-performance Windows environment provisioning and setup deployment engine. Built for engineers who need to turn a fresh Windows installation into a fully configured development workstation in a single click.
+<br/>
+
+**Tired of setting up a new Windows machine from scratch?**
+DevKit Engine automates the entire process — select your tools, hit Deploy, and walk away.
+It installs everything silently using Windows' built-in WinGet. No browser tabs. No setup wizards. No bloatware.
+
+<br/>
+
+[⬇️ Download Apex.exe](https://github.com/Faisal6951/DevKit-Engine/releases) &nbsp;·&nbsp; [📺 Watch Demo](#-demo) &nbsp;·&nbsp; [🚀 Quick Start](#-getting-started)
+
+</div>
 
 ---
 
-## 🎯 Key Capabilities
+## 📸 Preview
 
-*   ⚡ **Automated WinGet Provisioning:** Silently installs critical development tools (Git, VS Code, Cursor, Docker Desktop, Google Chrome, and more) using native Windows package management hooks.
-*   🔒 **Isolated Local Vault:** Securely manages system environment profiles and local setup credentials entirely offline via a localized configuration mapping system.
-*   ⚙️ **Dynamic Branding Control:** Built on top of a central command configuration pattern. Rebrand, rename, or swap system interface icon assets instantly by modifying a single file.
-*   🚀 **Zero Footprint Portable Exe:** Packaged via automated integration pipelines into a lightweight, standalone binary (`.exe`) that runs directly from a portable USB drive or local directory.
+<div align="center">
+  <img src="assets/devKit_pic.png" alt="DevKit Engine UI Screenshot" width="700" />
+</div>
 
 ---
 
-## 🛠️ Integrated Toolchains
+## 🎬 Demo
 
-The installation engine comes pre-configured to silently bundle and provision the following software suites out of the box:
+<div align="center">
+  <img src="assets/DevKit_gif.gif" alt="DevKit Engine in action" width="700" />
+</div>
+
+> 📺 **Full video demo coming soon** — [watch on GitHub Releases](https://github.com/Faisal6951/DevKit-Engine/releases)
+
+---
+
+## ❓ What Problem Does It Solve?
+
+Setting up a fresh Windows machine as a developer means:
+
+- Searching for every tool website manually
+- Clicking through setup wizard after setup wizard
+- Forgetting to install something and going back
+- Logging into Chrome, Git, Docker — one by one
+
+**DevKit Engine eliminates all of that in a single click.**
+
+---
+
+## ⚡ Key Features
+
+- **Silent Auto-Install** — Downloads and installs tools in the background. No prompts, no clicking. Just done.
+- **Smart Skip** — Already have a tool installed? DevKit Engine detects it and skips it automatically.
+- **Official Sources Only** — Every tool is fetched directly via Windows WinGet from its official package. No third-party sites, no risk.
+- **Auto Login Support** — Optionally enter credentials for Chrome, Docker, and Git Bash. The engine installs and logs you in automatically.
+- **Zero Footprint** — Ships as a single portable `.exe`. No installation required. Run it from a USB drive if needed.
+- **Fully Offline Credentials** — Login credentials never leave your machine. No telemetry. No cloud sync. No tracking.
+
+---
+
+## 🛠️ Integrated Tools
+
+DevKit Engine comes pre-configured to install the following out of the box:
 
 | Software | WinGet Package ID | Purpose |
 | :--- | :--- | :--- |
-| **Google Chrome** | `Google.Chrome` | Primary Target Web Browser |
-| **Git Bash** | `Git.Git` | Native Distributed Version Control |
-| **Visual Studio Code** | `Microsoft.VisualStudioCode` | Extensible Code & Text Editor |
-| **Cursor** | `Anysphere.Cursor` | AI-First Integrated Development Environment |
-| **Docker Desktop** | `Docker.DockerDesktop` | Containerization & Virtualization |
-| **VLC Media Player** | `VideoLAN.VLC` | High-Efficiency Open-Source Media Processing |
+| **Google Chrome** | `Google.Chrome` | Primary Web Browser |
+| **Git Bash** | `Git.Git` | Version Control |
+| **Visual Studio Code** | `Microsoft.VisualStudioCode` | Code Editor |
+| **Cursor** | `Anysphere.Cursor` | AI-First IDE |
+| **Docker Desktop** | `Docker.DockerDesktop` | Containerization |
+| **VLC Media Player** | `VideoLAN.VLC` | Media Player |
+| **Firefox** | `Mozilla.Firefox` | Web Browser |
+| **Brave** | `Brave.Brave` | Privacy Browser |
+
+> You can select only the tools you need. Anything already installed gets skipped automatically.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-*   **Operating System:** Windows 10 or Windows 11
-*   **Permissions:** Administrative privileges (required for silent application installation routines)
+
+- Windows 10 or Windows 11
+- Administrator privileges (required for silent WinGet installs)
 
 ### Installation
-1. Head over to the [GitHub Releases](https://github.com/Faisal6951/DevKit-Engine/releases) page.
-2. Download the latest compiled release architecture (`Apex.exe`).
-3. Run the application as an **Administrator** to allow the `winget` silent execution process to interact with your system packages.
+
+1. Go to the [**Releases page**](https://github.com/Faisal6951/DevKit-Engine/releases)
+2. Download **`Apex.exe`**
+3. Right-click → **Run as Administrator**
+4. Select the tools you want
+5. Optionally fill in credentials for auto-login
+6. Hit **Deploy** — DevKit Engine handles everything from here
+
+That's it.
 
 ---
 
-## 💻 Technical Architecture & Tech Stack
+## 🔐 Optional Auto Login
 
-This project is decoupled using a clean Model-View-Controller (MVC) architectural separation to keep UI code separate from core deployment execution logic:
+DevKit Engine includes optional credential fields for:
 
-*   **Language Infrastructure:** Python 3.12
-*   **Graphical User Interface:** `CustomTkinter` (Modernized dark/light adaptive variant of traditional Tkinter)
-*   **Automation Driver:** Native Windows `subprocess` execution pipes hooking into the `winget` CLI core.
-*   **Continuous Integration / Deployment:** Managed via automated GitHub Actions cloud virtual machines.
+- **Google Chrome** — logs into your Google account after install
+- **Docker Desktop** — authenticates Docker Hub automatically
+- **Git Bash** — configures your Git identity and credentials
+
+If you skip these fields, the tools still install — you just log in manually as normal. Credentials are stored locally only and never transmitted anywhere.
 
 ---
 
-## 📝 License & Security
+## 💻 Tech Stack
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+| Layer | Technology |
+| :--- | :--- |
+| **Language** | Python 3.12 |
+| **UI Framework** | CustomTkinter |
+| **Install Engine** | Windows WinGet via `subprocess` |
+| **Architecture** | MVC (Model-View-Controller) |
+| **CI/CD** | GitHub Actions |
+| **Packaging** | PyInstaller → standalone `.exe` |
 
-*DevKit Engine operates entirely locally. It does not track, collect, scrape, or transmit system states, telemetry data, or configuration credentials to external cloud endpoints.*
+---
+
+## 📁 Project Structure
+
+```
+DevKit-Engine/
+├── main.py              # Entry point
+├── config.py            # Central configuration
+├── ui/                  # UI components (CustomTkinter)
+├── logic/               # Install & automation logic
+├── assets/              # Icons and images
+└── .github/workflows/   # CI/CD pipeline
+```
+
+---
+
+## 🔒 Privacy & Security
+
+DevKit Engine operates **entirely locally**.
+
+- Does **not** collect telemetry or usage data
+- Does **not** transmit credentials to any server
+- Does **not** modify system files outside of WinGet install routines
+- All credential fields are stored in a local configuration only
+
+See [PRIVACY.md](PRIVACY.md) for full details.
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+Built by [Faisal](https://github.com/Faisal6951) &nbsp;·&nbsp; If this saved you time, drop a ⭐ on the repo
+
+</div>
