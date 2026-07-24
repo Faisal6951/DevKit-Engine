@@ -4,10 +4,10 @@ This app is unsigned (no paid cert yet). To run:
 2. Click "Run anyway"
 This is safe — source code is fully public on GitHub.
 
+
 <div align="center">
 
-
-<img src="assets/devkit-engine.ico" alt="DevKit Engine Logo" width="100" /`>
+<img src="assets/devkit-engine.ico" alt="DevKit Engine Logo" width="100" />
 
 # DevKit Engine — Apex
 
