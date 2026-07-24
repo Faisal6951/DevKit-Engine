@@ -1,5 +1,11 @@
 <div align="center">
 
+⚠️ Windows SmartScreen Warning
+This app is unsigned (no paid cert yet). To run:
+1. Click "More info" on the SmartScreen popup
+2. Click "Run anyway"
+This is safe — source code is fully public on GitHub.
+
 <img src="assets/devkit-engine.ico" alt="DevKit Engine Logo" width="100" />
 
 # DevKit Engine — Apex
