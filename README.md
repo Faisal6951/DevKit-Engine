@@ -1,17 +1,10 @@
-⚠️ Windows SmartScreen Warning
-This app is unsigned (no paid cert yet). To run:
-1. Click "More info" on the SmartScreen popup
-2. Click "Run anyway"
-This is safe — source code is fully public on GitHub.
-
-
 <div align="center">
 
 <img src="assets/devkit-engine.ico" alt="DevKit Engine Logo" width="100" />
 
 # DevKit Engine — Apex
 
-### One-click Windows dev environment setup. No manual installs. No wasted time.
+### One-click Windows developer setup. Official WinGet packages. Zero telemetry.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?logo=windows)](https://github.com/Faisal6951/DevKit-Engine/releases)
@@ -19,21 +12,19 @@ This is safe — source code is fully public on GitHub.
 [![WinGet](https://img.shields.io/badge/Powered%20By-WinGet-00B4D8)](https://learn.microsoft.com/en-us/windows/package-manager/)
 [![Release](https://img.shields.io/github/v/release/Faisal6951/DevKit-Engine?color=brightgreen&label=Latest%20Release)](https://github.com/Faisal6951/DevKit-Engine/releases)
 
-<br/>
+**New machine. Empty disk. Two minutes of clicking instead of two hours of installers.**
 
-**Tired of setting up a new Windows machine from scratch?**
-DevKit Engine automates the entire process — select your tools, hit Deploy, and walk away.
-It installs everything silently using Windows' built-in WinGet. No browser tabs. No setup wizards. No bloatware.
+Select a stack, optionally drop in credentials, hit Deploy. DevKit Engine silently installs from official WinGet sources, skips what you already have, and keeps secrets on this PC.
 
-<br/>
-
-[⬇️ Download Apex.exe](https://github.com/Faisal6951/DevKit-Engine/releases) &nbsp;·&nbsp; [📺 Watch Demo](#-demo) &nbsp;·&nbsp; [🚀 Quick Start](#-getting-started)
+[⬇️ Download the latest `.exe`](https://github.com/Faisal6951/DevKit-Engine/releases) &nbsp;·&nbsp; [📺 Demo](#-demo) &nbsp;·&nbsp; [🚀 Quick start](#-getting-started)
 
 </div>
 
+> **Windows SmartScreen** may warn because the release is not Authenticode-signed yet. Choose **More info → Run anyway**. The source is public; nothing is hidden.
+
 ---
 
-## 📸 Preview
+## Preview
 
 <div align="center">
   <img src="assets/devKit_pic.png" alt="DevKit Engine UI Screenshot" width="700" />
@@ -41,139 +32,131 @@ It installs everything silently using Windows' built-in WinGet. No browser tabs.
 
 ---
 
-## 🎬 Demo
+## Demo
 
 <div align="center">
   <img src="assets/Updated_Devkit_new.gif" alt="DevKit Engine in action" width="700" />
 </div>
 
-> 📺 **Full video demo coming soon** — [watch on GitHub Releases](https://github.com/Faisal6951/DevKit-Engine/releases)
+---
+
+## What it actually does
+
+A fresh Windows box usually means hunting download pages, babysitting wizards, and rediscovering the one tool you forgot. DevKit Engine collapses that into a single local session:
+
+1. Preflight — admin, WinGet, network
+2. Index — one WinGet + registry scan, so already-installed apps are skipped
+3. Plan — you see install vs skip before anything runs
+4. Deploy — silent official packages, then optional Git / Docker / Chrome sign-in
+5. Report — counts, failures, elapsed time, and a local completion page
+
+Credentials never leave the machine. Tokens and passwords are sealed with Windows DPAPI in `devkit_vault.json`.
 
 ---
 
-## ❓ What Problem Does It Solve?
+## Features
 
-Setting up a fresh Windows machine as a developer means:
-
-- Searching for every tool website manually
-- Clicking through setup wizard after setup wizard
-- Forgetting to install something and going back
-- Logging into Chrome, Git, Docker — one by one
-
-**DevKit Engine eliminates all of that in a single click.**
-
----
-
-## ⚡ Key Features
-
-- **Silent Auto-Install** — Downloads and installs tools in the background. No prompts, no clicking. Just done.
-- **Smart Skip** — Already have a tool installed? DevKit Engine detects it and skips it automatically.
-- **Official Sources Only** — Every tool is fetched directly via Windows WinGet from its official package. No third-party sites, no risk.
-- **Auto Login Support** — Optionally enter credentials for Chrome, Docker, and Git Bash. The engine installs and logs you in automatically.
-- **Zero Footprint** — Ships as a single portable `.exe`. No installation required. Run it from a USB drive if needed.
-- **Fully Offline Credentials** — Login credentials never leave your machine. No telemetry. No cloud sync. No tracking.
+- **Silent installs** from WinGet — no third-party mirrors, no extra wizards
+- **Smart skip** — installed software is detected once and left alone
+- **Presets** — Recommended, Full stack, Browsers, or your own mix
+- **Custom packages** — search by name or paste a WinGet ID; remove anytime
+- **Optional sign-in** — Git identity + stored GitHub token, Docker Hub login, Chrome account hint
+- **Portable** — one `.exe`, USB-friendly, no installer
+- **Honest status** — success is success; failures are listed, not papered over
+- **Cancel-safe** — stop after the current package without killing the machine state
+- **Local-only vault** — no accounts, no cloud, no telemetry
 
 ---
 
-## 🛠️ Integrated Tools
+## Bundled catalog
 
-DevKit Engine comes pre-configured to install the following out of the box:
-
-| Software | WinGet Package ID | Purpose |
+| Software | WinGet ID | Role |
 | :--- | :--- | :--- |
-| **Google Chrome** | `Google.Chrome` | Primary Web Browser |
-| **Git Bash** | `Git.Git` | Version Control |
-| **Visual Studio Code** | `Microsoft.VisualStudioCode` | Code Editor |
-| **Cursor** | `Anysphere.Cursor` | AI-First IDE |
-| **Docker Desktop** | `Docker.DockerDesktop` | Containerization |
-| **VLC Media Player** | `VideoLAN.VLC` | Media Player |
-| **Firefox** | `Mozilla.Firefox` | Web Browser |
-| **Brave** | `Brave.Brave` | Privacy Browser |
+| Google Chrome | `Google.Chrome` | Browser |
+| Mozilla Firefox | `Mozilla.Firefox` | Browser |
+| Brave | `Brave.Brave` | Privacy browser |
+| Git Bash | `Git.Git` | Version control |
+| Visual Studio Code | `Microsoft.VisualStudioCode` | Editor |
+| Cursor | `Anysphere.Cursor` | AI-first IDE |
+| Docker Desktop | `Docker.DockerDesktop` | Containers |
+| VLC Media Player | `VideoLAN.VLC` | Media |
 
-> You can select only the tools you need. Anything already installed gets skipped automatically.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Windows 10 or Windows 11
-- Administrator privileges (required for silent WinGet installs)
-
-### Installation
-
-1. Go to the [**Releases page**](https://github.com/Faisal6951/DevKit-Engine/releases)
-2. Download **`Apex.exe`**
-3. Right-click → **Run as Administrator**
-4. Select the tools you want
-5. Optionally fill in credentials for auto-login
-6. Hit **Deploy** — DevKit Engine handles everything from here
-
-That's it.
+Anything already present is skipped. Custom WinGet IDs sit alongside this list.
 
 ---
 
-## 🔐 Optional Auto Login
+## Getting started
 
-DevKit Engine includes optional credential fields for:
+**Needs:** Windows 10 or 11, Administrator (WinGet silent installs), internet.
 
-- **Google Chrome** — logs into your Google account after install
-- **Docker Desktop** — authenticates Docker Hub automatically
-- **Git Bash** — configures your Git identity and credentials
+1. Download **`DevKit-Engine.exe`** from [Releases](https://github.com/Faisal6951/DevKit-Engine/releases)
+2. Right-click → **Run as administrator** (the engine also requests elevation)
+3. Pick a preset or tick the tools you want
+4. Optionally fill Git / Docker / Google fields
+5. Click **Deploy environment** (or `Ctrl+Enter`)
 
-If you skip these fields, the tools still install — you just log in manually as normal. Credentials are stored locally only and never transmitted anywhere.
+Walk away. The log and completion page tell you what landed, what was already there, and what failed.
 
 ---
 
-## 💻 Tech Stack
+## Optional auto login
 
-| Layer | Technology |
+| Field | What happens |
 | :--- | :--- |
-| **Language** | Python 3.12 |
-| **UI Framework** | CustomTkinter |
-| **Install Engine** | Windows WinGet via `subprocess` |
-| **Architecture** | MVC (Model-View-Controller) |
-| **CI/CD** | GitHub Actions |
-| **Packaging** | PyInstaller → standalone `.exe` |
+| Google email | Opens Chrome on the Google sign-in page with that account hinted |
+| GitHub username + token | Sets `git` identity and stores the GitHub credential locally |
+| Docker Hub user + password | Waits for the engine, then `docker login` on this machine |
+
+Leave them blank and the apps still install — you sign in yourself later.
 
 ---
 
-## 📁 Project Structure
+## Run from source
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+```
+
+---
+
+## Tech
+
+| Layer | Choice |
+| :--- | :--- |
+| Language | Python 3.12 |
+| UI | CustomTkinter |
+| Installer | Windows WinGet |
+| Secrets | Windows DPAPI (local vault) |
+| Packaging | PyInstaller → one `.exe` |
+| CI | GitHub Actions |
 
 ```
 DevKit-Engine/
-├── main.py              # Entry point
-├── config.py            # Central configuration
-├── ui/                  # UI components (CustomTkinter)
-├── logic/               # Install & automation logic
-├── assets/              # Icons and images
-└── .github/workflows/   # CI/CD pipeline
+├── main.py              # Elevation, DPI, launch
+├── config.py            # Catalog, presets, theme
+├── ui/launcher_ui.py    # Desktop experience
+├── logic/               # WinGet, vault, auth, deploy
+├── assets/              # Icon and media
+└── .github/workflows/   # Release build
 ```
 
 ---
 
-## 🔒 Privacy & Security
+## Privacy
 
-DevKit Engine operates **entirely locally**.
-
-- Does **not** collect telemetry or usage data
-- Does **not** transmit credentials to any server
-- Does **not** modify system files outside of WinGet install routines
-- All credential fields are stored in a local configuration only
-
-See [PRIVACY.md](PRIVACY.md) for full details.
+Entirely local. No telemetry. No credential upload. See [PRIVACY.md](PRIVACY.md).
 
 ---
 
-## 📄 License
+## License
 
-Distributed under the **MIT License** — see [LICENSE](LICENSE) for details.
-
----
+MIT — [LICENSE](LICENSE)
 
 <div align="center">
 
-Built by [Faisal](https://github.com/Faisal6951) &nbsp;·&nbsp; If this saved you time, drop a ⭐ on the repo
+Built by [Faisal](https://github.com/Faisal6951) · If this saved you an afternoon, star the repo
 
 </div>

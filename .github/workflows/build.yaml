@@ -17,6 +17,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install pyinstaller
+      - name: Syntax check
+        run: python -m compileall -q .
       - name: Build with PyInstaller
         run: |
           pyinstaller --clean --noconsole --onefile --name "DevKit-Engine" --icon="assets/devkit-engine.ico" --add-data "assets;assets" main.py
